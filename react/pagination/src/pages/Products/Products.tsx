@@ -16,9 +16,9 @@ const Products = ({ products, total }: ProductsProps) => {
       <div className="product_card">
         {products.map((product) => (
           <div key={product.id} className="product_single_card">
-            <span>
+            <div className="product_image_container">
               <img src={product.thumbnail} alt={product.title} />
-            </span>
+            </div>
             <h2>{product.title}</h2>
             <p>
               {product.description.length > 20
