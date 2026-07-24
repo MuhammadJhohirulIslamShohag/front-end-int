@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Todo Container Card
+   ========================================================================== */
+
+/* Main component card - Centered container with soft elevation */
+.todo-container {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05),
+              0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+}
+
+/* Primary heading styling */
+.todo-title {
+  margin: 0 0 24px 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+/* ==========================================================================
+   Input Form Controls
+   ========================================================================== */
+
+/* Layout wrapper aligning input field and submit button side-by-side */
+.todo-input-wrapper {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* Text input field default state */
+.todo-input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #f8fafc;
+}
+
+/* Active focus ring styling for accessibility */
+.todo-input:focus {
+  border-color: #6366f1;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.todo-input::placeholder {
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   Button System
+   ========================================================================== */
+
+/* Base button properties & click animations */
+.btn {
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Primary CTA button (Submit) */
+.btn-primary {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #4f46e5;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+/* Secondary alert button (Delete) */
+.btn-delete {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+
+.btn-delete:hover {
+  background-color: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+}
+
+/* ==========================================================================
+   Task List Items & States
+   ========================================================================== */
+
+/* List container resets */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual item row card with subtle lift on hover */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.todo-item:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+/* Task text label with overflow wrap safety */
+.todo-text {
+  font-size: 0.95rem;
+  color: #334155;
+  word-break: break-word;
+}
+
+/* Empty list fallback display */
+.todo-empty {
+  text-align: center;
+  padding: 24px 0;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  font-style: italic;
+}

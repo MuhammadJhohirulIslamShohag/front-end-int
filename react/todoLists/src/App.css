@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Base Layout & Grid Configuration
+   ========================================================================== */
+
+/* Main application container - Full height grid layout */
+.app {
+  display: grid;
+  grid-template-rows: 60px 1fr 100px; /* Header, Body (flexible), Footer */
+  min-height: 100vh;                  /* Ensures layout spans full screen height */
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Middle body grid - Splitting layout into 3 columns */
+.content {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px; /* Nav, Main content, Sidebar */
+}
+
+/* ==========================================================================
+   Shared Typography & Alignment Styles
+   ========================================================================== */
+
+/* Horizontally and vertically center text in full-width bars */
+header, 
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Section Color Schemes & Spacing
+   ========================================================================== */
+
+/* Top navigation bar */
+header {
+  background-color: #ff523b; /* Vibrant primary accent */
+}
+
+/* Left sidebar navigation */
+nav {
+  background-color: #ff7243; /* Secondary warm accent */
+  padding-top: 20px;
+}
+
+/* Core main view area */
+main {
+  background-color: #ffe8be; /* Light neutral background for main content */
+}
+
+/* Right supplemental sidebar */
+aside {
+  background-color: #f29856; /* Muted orange accent */
+  padding-top: 20px;
+}
+
+/* Bottom status/footer bar */
+footer {
+  background-color: #728292; /* Neutral slate gray */
+}
