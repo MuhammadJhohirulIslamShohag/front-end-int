@@ -1,15 +1,6 @@
 import React from "react";
-
-interface TodoList {
-  id: number;
-  text: string;
-}
-
-const initialTasks: TodoList[] = [
-  { id: 1, text: "Buy groceries" },
-  { id: 2, text: "Wash the dishes" },
-  { id: 3, text: "Read a book" },
-];
+import type { TodoList } from "../../types/todo-lists.type";
+import { initialTasks } from "../../data/todo-lists";
 
 const TodoLists: React.FC = () => {
   const [tasks, setTasks] = React.useState<TodoList[]>(initialTasks);
@@ -51,12 +42,16 @@ const TodoLists: React.FC = () => {
         </div>
       </div>
       <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            <span>{task.text}</span>
-            <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
-          </li>
-        ))}
+        {tasks.length > 0 ? (
+          tasks.map((task) => (
+            <li key={task.id}>
+              <span>{task.text}</span>
+              <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+            </li>
+          ))
+        ) : (
+          <p>No tasks available.</p>
+        )}
       </ul>
     </div>
   );
