@@ -1,0 +1,22 @@
+/**
+ * Star Icon Base Styles
+ */
+.star-icon {
+  /* Dynamic sizing token using a CSS variable for easy customization */
+  --icon-size: 32px;
+
+  /* Indicates interactivity on hover */
+  cursor: pointer;
+
+  /* Dimensions driven by the icon size variable */
+  height: var(--icon-size);
+  width: var(--icon-size);
+}
+
+/**
+ * State Modifier: Filled Star
+ * Applies the active fill color when selected or hovered
+ */
+.star-icon-filled {
+  fill: yellow;
+}
