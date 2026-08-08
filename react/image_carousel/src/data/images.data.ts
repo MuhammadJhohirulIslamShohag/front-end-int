@@ -1,5 +1,9 @@
 import type { Image } from "../types/ImageCarousel.type";
 
+/**
+ * Mock image dataset used for populating the ImageCarousel component.
+ * Features sample image assets with fallback descriptive alternative text.
+ */
 export const images: Image[] = [
   {
     src: "https://picsum.photos/id/600/600/400",

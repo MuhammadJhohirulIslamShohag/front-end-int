@@ -1,68 +1,121 @@
-.carousel-container{
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: center;
+/* ==========================================================================
+   Carousel Main Container
+   ========================================================================== */
+
+/**
+ * Centered layout wrapper.
+ * Enforces responsive scaling with a strict max-width breakpoint.
+ */
+.carousel-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
 }
-.carousel-viewer{
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    background-color: #000;
-    transition: transform 0.5s ease-in-out;
+
+/* ==========================================================================
+   Image Viewer Frame
+   ========================================================================== */
+
+/**
+ * Image aspect frame (600x400 container).
+ * Acts as a positioning context (`relative`) for overlay navigation buttons.
+ */
+.carousel-viewer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #000; /* Letterbox fill for unaligned aspect ratios */
+  transition: transform 0.5s ease-in-out;
 }
-.carousel-image{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+
+/**
+ * Single image rendering rule.
+ * Uses `contain` to preserve aspect ratio without clipping or distortion.
+ */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-.nav-btn{
-    position:absolute;
-    top: 50%;
-    transform:translateY(-50%);
-    background-color:rgba(0,0,0,0.5);
-    color:#fff;
-    border:none;
-    padding:10px;
-    cursor: pointer;
-    user-select: none;
-    font-size: 18px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+
+/* ==========================================================================
+   Navigation Buttons (Overlay Controls)
+   ========================================================================== */
+
+/**
+ * Shared base styles for overlay action buttons.
+ * Uses CSS transform centering trick for vertical alignment.
+ */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none; /* Prevents text selection on rapid clicking */
+  font-size: 18px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
-.nav-btn:hover{
-    background-color:rgba(0,0,0,0.8)
+
+/* Hover feedback */
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
-.prev-button{
-    left:10px;
+
+/* Left overlay placement */
+.prev-button {
+  left: 10px;
 }
-.next-button{
-    right:10px;
+
+/* Right overlay placement */
+.next-button {
+  right: 10px;
 }
-.carousel-indicators{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 5px;
+
+/* ==========================================================================
+   Pagination Indicators (Dots Window)
+   ========================================================================== */
+
+/**
+ * Horizontal flex container for lower pagination dots.
+ */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 5px;
 }
-.indicator-button{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #ccc;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: background-color 0.3s ease;
+
+/**
+ * Base indicator dot styling.
+ */
+.indicator-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease;
 }
-.indicator-button.active{
-    background-color: #333;
+
+/**
+ * Active state highlight for current index dot.
+ */
+.indicator-button.active {
+  background-color: #333;
 }
