@@ -1,3 +1,14 @@
+import { User } from './users.types'
+
+
+// media
+export interface Media {
+  url: string;
+  alt: string;
+  previewSrc: string;
+  width: number;
+  height: number;
+}
 export type EntityType = 'mention' | 'hastag' | 'link';
 
 export interface PostEntityRange{
@@ -77,38 +88,6 @@ export interface Post {
   status: PostStatus;
 }
 
-// media
-export interface Media {
-  url: string;
-  alt: string;
-  previewSrc: string;
-  width: number;
-  height: number;
-}
-
-export interface RelationshipToViewer {
-  isFriend?: boolean;
-  isMuted?: boolean;
-  isFollowed?: boolean;
-  isBlocked?: boolean;
-}
-
-export interface User {
-  id: string;
-  name: string;
-  profilePhotoUrl: string;
-  handle: string;
-  isVerified: boolean;
-  relationshipToViewer: RelationshipToViewer;
-}
-
-// server response
-export interface FeedPageResponse {
-  postIds: string[];
-  posts: Post[];
-  media: Media[];
-  users: User[];
-}
 
 // create response
 export interface CreatePostResponse{
