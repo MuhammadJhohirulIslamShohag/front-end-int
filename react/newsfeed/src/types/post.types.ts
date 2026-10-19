@@ -88,6 +88,13 @@ export interface Post {
   status: PostStatus;
 }
 
+// composer darft
+export interface ComposerDarft{
+  body:PostBody;
+  mediaIds: string[];
+  uploadState: 'idle' | 'uploading' | 'failed';
+  submitState: 'idle' | 'submitting' | 'submited' | 'failed'
+}
 
 // create response
 export interface CreatePostResponse{
